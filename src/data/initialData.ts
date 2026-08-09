@@ -3,8 +3,8 @@ import { Task, User, Student, IEPGoal, ProductImprovement } from '../types';
 export const INITIAL_USERS: User[] = [
   {
     id: 'usr_1',
-    name: 'Alex Rivera',
-    email: 'alex.rivera@workspace.io',
+    name: 'Besta Rajesh',
+    email: 'besta.rajesh@workspace.io',
     role: 'Product Lead',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
   },
