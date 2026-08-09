@@ -52,7 +52,7 @@ export const INITIAL_TASKS: Task[] = [
     comments: [
       {
         id: 'c1',
-        authorName: 'Sarah Chen',
+        authorName: 'rajesh',
         authorAvatar: INITIAL_USERS[1].avatar,
         content: 'Theme colors match Figma tokens precisely. Dark mode background contrast tuned to 12% max delta.',
         createdAt: '2026-08-04T10:15:00Z',
@@ -82,7 +82,7 @@ export const INITIAL_TASKS: Task[] = [
     comments: [
       {
         id: 'c2',
-        authorName: 'Marcus Vance',
+        authorName: 'ashok',
         authorAvatar: INITIAL_USERS[2].avatar,
         content: 'REST routes for /api/tasks and /api/caseload are live with input sanitization.',
         createdAt: '2026-08-06T14:20:00Z',
@@ -112,7 +112,7 @@ export const INITIAL_TASKS: Task[] = [
     comments: [
       {
         id: 'c3',
-        authorName: 'Alex Rivera',
+        authorName: 'Dhanujaya',
         authorAvatar: INITIAL_USERS[0].avatar,
         content: 'Take Data studio now allows live trial tapping for Speech-Language Pathologists.',
         createdAt: '2026-08-07T09:30:00Z',
