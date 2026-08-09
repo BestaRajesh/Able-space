@@ -1,0 +1,6 @@
+{
+  "name": "TaskFlow & AbleSpace Studio",
+  "description": "Comprehensive Task Management System with theme engine, guest login, and AbleSpace Caseload Take Data product analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
