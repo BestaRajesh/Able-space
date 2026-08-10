@@ -159,6 +159,19 @@ npm install
 - [x] Take Data workflow
 - [x] Product improvement analysis
 
+## Technology Choices
+
+| Technology | Purpose |
+|---|---|
+| React | Component-based UI development |
+| TypeScript | Type safety and maintainability |
+| Tailwind CSS | Responsive and consistent styling |
+| Lucide React | Interface icons |
+| React Context | Theme and user state |
+| LocalStorage | Client-side persistence |
+| Node.js | Backend runtime |
+| Express | REST API layer |
+
 ## Tech Stack
 - **Frontend**: React 19, TypeScript, Tailwind CSS, Motion Animations, Lucide Icons
 - **Backend API**: Node.js / Express (NestJS API architecture), TypeScript, tsx, esbuild
