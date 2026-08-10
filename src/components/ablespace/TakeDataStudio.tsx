@@ -157,6 +157,50 @@ Student ${student.firstName} ${student.lastName} participated in a ${Math.max(1,
         </div>
       </div>
 
+      {/* Student Metadata Summary */}
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        <div className={`p-4 rounded-2xl border ${themeConfig.cardClass}`}>
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
+            Grade
+          </p>
+          <p className="mt-2 text-sm font-bold text-slate-900 dark:text-zinc-100">{student.grade || '-'}</p>
+        </div>
+
+        <div className={`p-4 rounded-2xl border ${themeConfig.cardClass}`}>
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
+            Service Type
+          </p>
+          <p className="mt-2 text-sm font-bold text-slate-900 dark:text-zinc-100">{student.serviceTime || '-'}</p>
+        </div>
+
+        <div className={`p-4 rounded-2xl border ${themeConfig.cardClass} sm:col-span-2 xl:col-span-1`}>
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
+            Collaborators
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {student.collaborators && student.collaborators.length > 0 ? (
+              student.collaborators.map((collaborator) => (
+                <span
+                  key={collaborator.id}
+                  className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${collaborator.color} text-white shadow-sm`}
+                >
+                  {collaborator.initials}
+                </span>
+              ))
+            ) : (
+              <span className="text-sm text-slate-500 dark:text-zinc-400">No collaborators assigned</span>
+            )}
+          </div>
+        </div>
+
+        <div className={`p-4 rounded-2xl border ${themeConfig.cardClass}`}>
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
+            IEP Due Date
+          </p>
+          <p className="mt-2 text-sm font-bold text-slate-900 dark:text-zinc-100">{student.iepDue || '-'}</p>
+        </div>
+      </div>
+
       {/* Goal Selector Tabs */}
       <div className="flex items-center gap-2 overflow-x-auto pb-1">
         {studentGoals.map((goal, idx) => (

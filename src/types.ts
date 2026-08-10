@@ -92,6 +92,7 @@ export interface Student {
   lastName: string;
   iepDue: string;
   evalDue: string;
+  serviceType: string;
   collaborators: Collaborator[];
   serviceTime: string;
   school: string;
