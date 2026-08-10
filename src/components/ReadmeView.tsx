@@ -117,6 +117,48 @@ src/
 └── types.ts
 ```
 
+## Getting Started
+
+### Prerequisites
+- Node.js 20+
+- npm
+
+### Installation
+```bash
+git clone https://github.com/BestaRajesh/Able-space.git
+cd Able-space
+npm install
+```
+
+## Assessment Coverage
+
+### Part 1 – Task Management
+- [x] Task creation
+- [x] Task editing
+- [x] Task deletion
+- [x] Task status management
+- [x] Priority management
+- [x] Task filtering
+- [x] Search
+- [x] Kanban board
+- [x] List view
+- [x] Calendar view
+- [x] Analytics
+- [x] Subtasks
+- [x] Comments
+- [x] Assignees
+
+### Part 2 – AbleSpace
+- [x] Caseload table
+- [x] Student registration
+- [x] Grade
+- [x] Primary diagnosis
+- [x] IEP due date
+- [x] Evaluation due date
+- [x] Service type
+- [x] Take Data workflow
+- [x] Product improvement analysis
+
 ## Tech Stack
 - **Frontend**: React 19, TypeScript, Tailwind CSS, Motion Animations, Lucide Icons
 - **Backend API**: Node.js / Express (NestJS API architecture), TypeScript, tsx, esbuild
