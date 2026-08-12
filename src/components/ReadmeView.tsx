@@ -84,7 +84,7 @@ The AbleSpace caseload module supports:
 ---
 
 ## Project Structure
-```text
+\`\`\`text
 src/
 ├── components/
 │   ├── ablespace/
@@ -115,7 +115,7 @@ src/
 ├── main.tsx
 ├── index.css
 └── types.ts
-```
+\`\`\`
 
 ## Getting Started
 
@@ -124,11 +124,11 @@ src/
 - npm
 
 ### Installation
-```bash
-git clone https://github.com/BestaRajesh/Able-space.git
-cd Able-space
+\`\`\`bash
+git clone https://github.com/BestaRajesh/Able-space-taskflow.git
+cd Able-space-taskflow
 npm install
-```
+\`\`\`
 
 ## Assessment Coverage
 
