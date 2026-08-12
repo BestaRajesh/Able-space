@@ -1,4 +1,5 @@
 import express from 'express';
+import net from 'net';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
@@ -6,9 +7,36 @@ import { createServer as createViteServer } from 'vite';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+function getAvailablePort(startPort: number): Promise<number> {
+  return new Promise((resolve, reject) => {
+    const server = net.createServer();
+
+    server.once('error', (error) => {
+      if ((error as NodeJS.ErrnoException).code === 'EADDRINUSE') {
+        server.close(() => resolve(getAvailablePort(startPort + 1)));
+      } else {
+        reject(error);
+      }
+    });
+
+    server.once('listening', () => {
+      const address = server.address();
+      if (!address || typeof address === 'string') {
+        reject(new Error('Unable to determine available port'));
+        return;
+      }
+      const port = address.port;
+      server.close(() => resolve(port));
+    });
+
+    server.listen(startPort, '0.0.0.0');
+  });
+}
+
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || (await getAvailablePort(3001));
+  const HMR_PORT = Number(process.env.HMR_PORT) || (await getAvailablePort(24679));
 
   app.use(express.json());
 
@@ -221,7 +249,12 @@ async function startServer() {
   // Vite middleware in dev mode
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
-      server: { middlewareMode: true },
+      server: {
+        middlewareMode: true,
+        hmr: {
+          port: HMR_PORT,
+        },
+      },
       appType: 'spa',
     });
     app.use(vite.middlewares);
@@ -233,8 +266,8 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server listening on http://0.0.0.0:${PORT}`);
+  app.listen(PORT, () => {
+    console.log(`Server listening on http://127.0.0.1:${PORT}`);
   });
 }
 
